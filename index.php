@@ -5,7 +5,7 @@ use QL\QueryList;
 $sort = isset($_GET['sort']) ? $_GET['sort'] : 'date';
 $page = isset($_GET['page']) ? $_GET['page'] :1;
 $prev = $page > 1 ? $page -1 : '#';
-$newUrl = $baseUrl . '-/list/=/limit=30/';
+$newUrl = $baseUrl . '-/list/=/limit=120/';
 
 //搜索时，变更baseurl
 $searchStr = isset($_GET['searchstr']) ? $_GET['searchstr'] : false;
