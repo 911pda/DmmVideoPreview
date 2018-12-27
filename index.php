@@ -39,14 +39,12 @@ $rules = [
     'title' => ['.flb-works-detail dt','text','-span'],
     'img' => ['img','src'],
     'video' => ['.ds-btn-play a','href']
-    'id' => ['.ds-btn-bskt a','data-cid']
 ];
 if($searchStr){
     $rules = [
         'title' => ['.ttl-list','text'],
         'img' => ['img','src'],
         'video' => ['.btn a','href']
-        'id' => ['.btn a','cid']
     ];
 }
 $ql = QueryList::html($html)->rules($rules)->range('.flb-works')->query();
