@@ -38,7 +38,8 @@ $html = getHtml($newUrl);
 $rules = [
     'title' => ['.flb-works-detail dt','text','-span'],
     'img' => ['img','src'],
-    'video' => ['.ds-btn-play a','href']
+    'video' => ['.ds-btn-play a','href'],
+    'cid' => ['.ds-btn-bskt a','data-cid']
 ];
 if($searchStr){
     $rules = [
