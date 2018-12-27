@@ -5,7 +5,7 @@ use QL\QueryList;
 $sort = isset($_GET['sort']) ? $_GET['sort'] : 'date';
 $page = isset($_GET['page']) ? $_GET['page'] :1;
 $prev = $page > 1 ? $page -1 : '#';
-$newUrl = $baseUrl . '-/list/=/limit=120/';
+$newUrl = $baseUrl . '-/list/=/limit=30/';
 
 //搜索时，变更baseurl
 $searchStr = isset($_GET['searchstr']) ? $_GET['searchstr'] : false;
@@ -39,12 +39,14 @@ $rules = [
     'title' => ['.flb-works-detail dt','text','-span'],
     'img' => ['img','src'],
     'video' => ['.ds-btn-play a','href']
+    'id' => ['.ds-btn-bskt a','data-cid']
 ];
 if($searchStr){
     $rules = [
         'title' => ['.ttl-list','text'],
         'img' => ['img','src'],
         'video' => ['.btn a','href']
+        'id' => ['.btn a','cid']
     ];
 }
 $ql = QueryList::html($html)->rules($rules)->range('.flb-works')->query();
